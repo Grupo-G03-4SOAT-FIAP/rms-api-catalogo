@@ -34,11 +34,6 @@ spec:
                 secretKeyRef:
                   name: rms-api-catalogo-secret
                   key: DB_PASSWORD
-            - name: ACCESS_TOKEN_MERCADOPAGO
-              valueFrom:
-                secretKeyRef:
-                  name: rms-api-catalogo-secret
-                  key: ACCESS_TOKEN_MERCADOPAGO
           ports:
             - containerPort: 3000
           resources:

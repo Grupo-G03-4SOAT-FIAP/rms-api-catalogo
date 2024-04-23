@@ -3,37 +3,6 @@ GET http://localhost:3000/
 
 ##################################################
 
-### Listar clientes
-GET http://localhost:3000/cliente
-
-### Buscar cliente pelo CPF (Login)
-GET http://localhost:3000/cliente/cpf/44470640735
-
-### Criar cliente (Cadastro)
-POST http://localhost:3000/cliente
-Content-Type: application/json
-
-{
-    "cpf": "44470640735",
-    "nome": "Fulano da Silva Santos",
-    "email": "fulano@gmail.com"
-}
-
-### Editar cliente
-PUT http://localhost:3000/cliente/6a9d3e75-06e2-4066-aa4a-9c2a5f44ba3f
-Content-Type: application/json
-
-{
-    "cpf": "44470640735",
-    "nome": "Fulano da Silva Santos",
-    "email": "fulano.1998@gmail.com"
-}
-
-### Remover cliente
-DELETE http://localhost:3000/cliente/96a9d3e75-06e2-4066-aa4a-9c2a5f44ba3f
-
-##################################################
-
 ### Listar categorias
 GET http://localhost:3000/categoria
 
@@ -97,36 +66,3 @@ Content-Type: application/json
 
 ### Remover produto
 DELETE http://localhost:3000/produto/6a1f1007-b48a-458b-8009-9f2701eae8f3
-
-##################################################
-
-### Fila de pedidos (com o status "Recebido")
-GET http://localhost:3000/pedido/fila
-
-### Listar pedidos (com o status "Pronto" ou "Em preparação")
-GET http://localhost:3000/pedido
-
-### Detalhes de um pedido
-GET http://localhost:3000/pedido/ffb5ea00-5e1c-40d1-b9b9-bce8b4baf3dc
-
-### Criar pedido
-POST http://localhost:3000/pedido
-Content-Type: application/json
-
-{
-    //"cpfCliente": "44470640735", // Campo opcional
-    "itensPedido": [
-        {
-            "produto": "3ecd5148-c71f-412b-9a3a-0c1896375bf2",
-            "quantidade": 1
-        }
-    ]
-}
-
-### Editar pedido (atualizar status)
-PUT http://localhost:3000/pedido/10cc2240-cc07-4a02-bb75-e292faef49e3
-Content-Type: application/json
-
-{
-    "statusPedido": "em preparacao"
-}

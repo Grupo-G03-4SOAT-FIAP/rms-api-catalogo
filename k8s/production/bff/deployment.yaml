@@ -55,36 +55,6 @@ spec:
                 secretKeyRef:
                   name: db-bff-secret
                   key: password
-            - name: ACCESS_TOKEN_MERCADOPAGO
-              valueFrom:
-                secretKeyRef:
-                  name: mercadopago-secret
-                  key: ACCESS_TOKEN_MERCADOPAGO
-            - name: USER_ID_MERCADOPAGO
-              valueFrom:
-                secretKeyRef:
-                  name: mercadopago-secret
-                  key: USER_ID_MERCADOPAGO
-            - name: EXTERNAL_POS_ID_MERCADOPAGO
-              valueFrom:
-                secretKeyRef:
-                  name: mercadopago-secret
-                  key: EXTERNAL_POS_ID_MERCADOPAGO
-            - name: WEBHOOK_URL_MERCADOPAGO
-              valueFrom:
-                secretKeyRef:
-                  name: mercadopago-secret
-                  key: WEBHOOK_URL_MERCADOPAGO
-            - name: COGNITO_USER_POOL_ID
-              valueFrom:
-                secretKeyRef:
-                  name: cognito-secret
-                  key: COGNITO_USER_POOL_ID
-            - name: COGNITO_CLIENT_ID
-              valueFrom:
-                secretKeyRef:
-                  name: cognito-secret
-                  key: COGNITO_CLIENT_ID
           ports:
             - containerPort: 3000
           resources:

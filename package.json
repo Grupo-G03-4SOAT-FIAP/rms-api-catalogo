@@ -17,7 +17,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage --config ./jest.config.json",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:bdd": "npx cucumber-js --format progress-bar --format html:cucumber-report.html"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -26,6 +27,8 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^7.1.14",
     "@nestjs/typeorm": "^10.0.0",
+    "@types/axios": "^0.14.0",
+    "axios": "^1.6.8",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "luxon": "^3.4.4",
@@ -35,6 +38,7 @@
     "typeorm": "^0.3.17"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^10.5.1",
     "@faker-js/faker": "^8.4.1",
     "@nestjs/cli": "^10.1.18",
     "@nestjs/schematics": "^10.0.0",

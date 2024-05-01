@@ -1,9 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { Given, Then, When, BeforeAll } = require('@cucumber/cucumber');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const Categoria = require('./step-definitions/categoria.js');
+const Categoria = require('../support/categoria.js');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const Produto = require('./step-definitions/produto.js');
+const Produto = require('../support/produto.js');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const assert = require('node:assert');
 

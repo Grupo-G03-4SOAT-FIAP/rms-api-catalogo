@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { IProdutoRepository } from 'src/domain/produto/interfaces/produto.repository.port';
-import { Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 import { ProdutoModel } from '../../models/produto.model';
 import { ProdutoEntity } from 'src/domain/produto/entities/produto.entity';
 import { SQLDTOFactory } from '../../factories/sql.dto.factory';
@@ -20,7 +20,6 @@ export class ProdutoRepository implements IProdutoRepository {
       where: { nome: produto.nome },
       withDeleted: true,
     });
-
     if (produtoExistente) {
       await this.produtoRepository.restore({ id: produtoExistente.id });
       const produtoRestaurado = await this.produtoRepository.findOne({
@@ -72,7 +71,7 @@ export class ProdutoRepository implements IProdutoRepository {
     nomeProduto: string,
   ): Promise<ProdutoEntity | null> {
     const produtoModel = await this.produtoRepository.findOne({
-      where: { nome: nomeProduto },
+      where: { nome: ILike(nomeProduto) },
       relations: this.relations,
     });
     if (produtoModel) {

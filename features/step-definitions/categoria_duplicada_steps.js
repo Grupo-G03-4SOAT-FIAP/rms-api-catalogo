@@ -8,6 +8,7 @@ const assert = require('node:assert');
 const categoria = new Categoria();
 let categoriaData = '';
 let categoriaRegistrada = '';
+let categoriaDupicada = '';
 
 Given(
   'O usuário cria uma categoria e retornar a mensagem de sucesso para o cadastro da categoria {string}',

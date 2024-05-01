@@ -51,8 +51,7 @@ When('Tentar criar outro produto com o mesmo nome', async function () {
 Then(
   'Deve ser retornado um erro {string} com status code {int} e mensagem {string} para produtos duplicados',
   function (error, status_code, mensagem) {
-    console.log(produtoRegistrado);
-    assert.deepEqual(produtoRegistrado.mensagem, mensagem);
+    assert.deepEqual(produtoRegistrado.message, mensagem);
     assert.deepEqual(produtoRegistrado.error, error);
     assert.strictEqual(produtoRegistrado.statusCode, status_code);
   },

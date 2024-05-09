@@ -30,9 +30,40 @@ class Categoria {
     return response;
   }
 
+  async editarCategoria(categoriaId, categoriaObj) {
+    const response = await request(process.env.BASE_URL)
+      .put(`/categoria/${categoriaId}`)
+      .send(categoriaObj)
+      .then((response) => {
+        return response.body;
+      });
+
+    return response;
+  }
+
+  async removerCategoriaPorId(categoriaId) {
+    const response = await request(process.env.BASE_URL)
+      .delete(`/categoria/${categoriaId}`)
+      .then((response) => {
+        return response.body;
+      });
+
+    return response;
+  }
+
   async retornarCategoriaPorId(categoriaId) {
     const response = await request(process.env.BASE_URL)
       .get(`/categoria/${categoriaId}`)
+      .then((response) => {
+        return response.body;
+      });
+
+    return response;
+  }
+
+  async retornarTodasCategorias() {
+    const response = await request(process.env.BASE_URL)
+      .get(`/categoria/`)
       .then((response) => {
         return response.body;
       });

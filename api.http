@@ -1,16 +1,16 @@
 ### Healthcheck
-GET http://localhost:3000/
+GET http://localhost:3001/
 
 ##################################################
 
 ### Listar categorias
-GET http://localhost:3000/categoria
+GET http://localhost:3001/categoria
 
 ### Detalhes de uma categoria
-GET http://localhost:3000/categoria/9fbc614b-9b44-4d35-8ec7-36e55ba7f0f4
+GET http://localhost:3001/categoria/9fbc614b-9b44-4d35-8ec7-36e55ba7f0f4
 
 ### Criar categoria
-POST http://localhost:3000/categoria
+POST http://localhost:3001/categoria
 Content-Type: application/json
 
 {
@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ### Editar categoria
-PUT http://localhost:3000/categoria/9fbc614b-9b44-4d35-8ec7-36e55ba7f0f4
+PUT http://localhost:3001/categoria/9fbc614b-9b44-4d35-8ec7-36e55ba7f0f4
 Content-Type: application/json
 
 {
@@ -27,21 +27,21 @@ Content-Type: application/json
 }
 
 ### Remover categoria
-DELETE http://localhost:3000/categoria/9fbc614b-9b44-4d35-8ec7-36e55ba7f0f4
+DELETE http://localhost:3001/categoria/9fbc614b-9b44-4d35-8ec7-36e55ba7f0f4
 
 ##################################################
 
 ### Listar produtos
-GET http://localhost:3000/produto
+GET http://localhost:3001/produto
 
 ### Listar produtos por categoria
-GET http://localhost:3000/produto/categoria/9fbc614b-9b44-4d35-8ec7-36e55ba7f0f4
+GET http://localhost:3001/produto/categoria/9fbc614b-9b44-4d35-8ec7-36e55ba7f0f4
 
 ### Detalhes de um produto
-GET http://localhost:3000/produto/6a1f1007-b48a-458b-8009-9f2701eae8f3
+GET http://localhost:3001/produto/6a1f1007-b48a-458b-8009-9f2701eae8f3
 
 ### Criar produto
-POST http://localhost:3000/produto
+POST http://localhost:3001/produto
 Content-Type: application/json
 
 {
@@ -53,7 +53,7 @@ Content-Type: application/json
 }
 
 ### Editar produto
-PUT http://localhost:3000/produto/6a1f1007-b48a-458b-8009-9f2701eae8f3
+PUT http://localhost:3001/produto/6a1f1007-b48a-458b-8009-9f2701eae8f3
 Content-Type: application/json
 
 {
@@ -65,4 +65,4 @@ Content-Type: application/json
 }
 
 ### Remover produto
-DELETE http://localhost:3000/produto/6a1f1007-b48a-458b-8009-9f2701eae8f3
+DELETE http://localhost:3001/produto/6a1f1007-b48a-458b-8009-9f2701eae8f3

@@ -35,7 +35,7 @@ spec:
                   name: rms-api-catalogo-secret
                   key: DB_PASSWORD
           ports:
-            - containerPort: 3000
+            - containerPort: 3001
           resources:
             # You must specify requests for CPU to autoscale
             # based on CPU utilization

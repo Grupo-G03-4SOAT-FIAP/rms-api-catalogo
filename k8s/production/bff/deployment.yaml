@@ -26,7 +26,7 @@ spec:
               secretProviderClass: aws-secrets
       containers:
         - name: rms-api-catalogo
-          image: 900534935988.dkr.ecr.us-east-1.amazonaws.com/rms:latest
+          image: 900534935988.dkr.ecr.us-east-1.amazonaws.com/rms-api-catalogo:latest
           envFrom:
             - configMapRef:
                 name: rms-api-catalogo-config
@@ -56,7 +56,7 @@ spec:
                   name: db-bff-secret
                   key: password
           ports:
-            - containerPort: 3000
+            - containerPort: 3001
           resources:
             # You must specify requests for CPU to autoscale
             # based on CPU utilization

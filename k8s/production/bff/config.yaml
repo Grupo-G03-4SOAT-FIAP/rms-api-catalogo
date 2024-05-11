@@ -6,5 +6,5 @@ metadata:
   labels:
     app: rms-api-catalogo
 data:
-  DB_NAME: "rms"
+  DB_NAME: "catalogo"
   DB_SSL: "false"

@@ -6,7 +6,7 @@ metadata:
   labels:
     app: rms-api-catalogo
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: rms-api-catalogo
@@ -23,7 +23,7 @@ spec:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: aws-secrets
+              secretProviderClass: aws-secrets-api-catalogo
       containers:
         - name: rms-api-catalogo
           image: 900534935988.dkr.ecr.us-east-1.amazonaws.com/rms-api-catalogo:latest
@@ -38,22 +38,22 @@ spec:
             - name: DB_HOST
               valueFrom:
                 secretKeyRef:
-                  name: db-bff-secret
+                  name: db-catalogo-secret
                   key: host
             - name: DB_PORT
               valueFrom:
                 secretKeyRef:
-                  name: db-bff-secret
+                  name: db-catalogo-secret
                   key: port
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: db-bff-secret
+                  name: db-catalogo-secret
                   key: username
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: db-bff-secret
+                  name: db-catalogo-secret
                   key: password
           ports:
             - containerPort: 3001

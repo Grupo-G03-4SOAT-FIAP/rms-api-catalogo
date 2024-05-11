@@ -37,9 +37,50 @@ class Produto {
     return response;
   }
 
-  async retornarPategoriaPorId(produtoId) {
+  async retornarProdutoPorId(produtoId) {
     const response = await request(process.env.BASE_URL)
       .get(`/produto/${produtoId}`)
+      .then((response) => {
+        return response.body;
+      });
+
+    return response;
+  }
+
+  async editarProduto(produtoId, produtoObj) {
+    const response = await request(process.env.BASE_URL)
+      .put(`/produto/${produtoId}`)
+      .send(produtoObj)
+      .then((response) => {
+        return response.body;
+      });
+
+    return response;
+  }
+
+  async removerProdutoPorId(produtoId) {
+    const response = await request(process.env.BASE_URL)
+      .delete(`/produto/${produtoId}`)
+      .then((response) => {
+        return response.body;
+      });
+
+    return response;
+  }
+
+  async retornarTodosProdutos() {
+    const response = await request(process.env.BASE_URL)
+      .get(`/produto/`)
+      .then((response) => {
+        return response.body;
+      });
+
+    return response;
+  }
+
+  async retornarTodosProdutosPorCategoria(categoriaId) {
+    const response = await request(process.env.BASE_URL)
+      .get(`/produto/categoria/${categoriaId}`)
       .then((response) => {
         return response.body;
       });

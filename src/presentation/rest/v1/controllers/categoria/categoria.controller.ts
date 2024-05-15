@@ -157,4 +157,28 @@ export class CategoriaController {
   async listar() {
     return await this.categoriaUseCase.listarCategorias();
   }
+
+  async olaMundo() {
+    let a;
+    let b;
+    let c;
+    let d;
+
+    a = 1;
+    b = "1";
+
+    c = a + b;
+
+    const e = 0;
+
+    let f = a + "";
+
+    let g;
+    let h;
+
+    if (a + b == "11") {
+      console.log("What!?😱");
+    }
+  } 
+
 }

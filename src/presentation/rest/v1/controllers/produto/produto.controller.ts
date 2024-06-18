@@ -8,6 +8,7 @@ import {
   Inject,
   NotFoundException,
   Param,
+  ParseUUIDPipe,
   Post,
   Put,
 } from '@nestjs/common';
@@ -122,7 +123,7 @@ export class ProdutoController {
     description: 'Produto informado não existe',
     type: NotFoundError,
   })
-  async remover(@Param('id') id: string) {
+  async remover(@Param('id', ParseUUIDPipe) id: string) {
     try {
       return await this.produtoUseCase.excluirProduto(id);
     } catch (error) {
@@ -145,7 +146,7 @@ export class ProdutoController {
     description: 'Produto informado não existe',
     type: NotFoundError,
   })
-  async buscar(@Param('id') id: string) {
+  async buscar(@Param('id', ParseUUIDPipe) id: string) {
     try {
       return await this.produtoUseCase.buscarProduto(id);
     } catch (error) {
@@ -180,7 +181,7 @@ export class ProdutoController {
     description: 'Categoria informada não existe',
     type: NotFoundError,
   })
-  async listarPorCategoria(@Param('id') id: string) {
+  async listarPorCategoria(@Param('id', ParseUUIDPipe) id: string) {
     try {
       return await this.produtoUseCase.listarProdutosPorCategoria(id);
     } catch (error) {

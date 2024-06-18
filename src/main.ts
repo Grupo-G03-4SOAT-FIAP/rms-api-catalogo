@@ -9,7 +9,9 @@ async function bootstrap() {
   app.use(helmet());
   const config = new DocumentBuilder()
     .setTitle('API de Catálogo de Produtos')
-    .setDescription('Microsserviço de Catálogo de Produtos do Sistema de Gestão de Restaurantes')
+    .setDescription(
+      'Microsserviço de Catálogo de Produtos do Sistema de Gestão de Restaurantes',
+    )
     .setVersion('0.0.1')
     .build();
   const document = SwaggerModule.createDocument(app, config);

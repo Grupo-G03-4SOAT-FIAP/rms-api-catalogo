@@ -10,14 +10,17 @@ import { ApiProperty } from '@nestjs/swagger';
 export class CriaCategoriaDTO {
   @IsString()
   @IsNotEmpty({ message: 'Nome da categoria não pode ser vazio' })
-  @IsDefined({ each: true, message: 'Nome não pode ser nulo' })
+  @IsDefined({ message: 'Nome não pode ser nulo' })
+  @MaxLength(100, {
+    message: 'Nome não pode ter mais que 100 caracteres',
+  })
   @ApiProperty({ description: 'Nome da categoria' })
   nome: string;
 
   @IsString()
   @IsOptional()
-  @MaxLength(1000, {
-    message: 'Descrição não pode ter mais que 1000 caracteres',
+  @MaxLength(255, {
+    message: 'Descrição não pode ter mais que 255 caracteres',
   })
   @ApiProperty({ description: 'Descrição da categoria' })
   descricao?: string;
@@ -26,14 +29,16 @@ export class CriaCategoriaDTO {
 export class AtualizaCategoriaDTO {
   @IsString()
   @IsOptional()
-  @IsDefined({ each: true, message: 'Nome não pode ser nulo' })
+  @MaxLength(100, {
+    message: 'Nome não pode ter mais que 100 caracteres',
+  })
   @ApiProperty({ description: 'Nome da categoria', required: false })
   nome?: string;
 
   @IsString()
   @IsOptional()
-  @MaxLength(1000, {
-    message: 'Descrição não pode ter mais que 1000 caracteres',
+  @MaxLength(255, {
+    message: 'Descrição não pode ter mais que 255 caracteres',
   })
   @ApiProperty({ description: 'Descrição da categoria', required: false })
   descricao?: string;

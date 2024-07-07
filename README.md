@@ -26,9 +26,9 @@ Microsserviço de Catálogo de Produtos e Categorias do Sistema de Gestão de Re
 3. Navegue até a pasta raiz do projeto usando o Terminal;
 4. Faça uma cópia do arquivo `.env.template` com o nome `.env` e preencha as variáveis de ambiente dentro dele;
 5. Execute o comando `npm install` para instalar os pacotes npm;
-6. Use o comando `npm run start` para iniciar a aplicação.
-7. Execute o comando `docker-compose up -d db-catalogo` para iniciar o container do banco de dados;
-8. Acesse o Swagger em http://localhost:3000/swagger/
+6. Execute o comando `docker-compose up -d db-catalogo` para iniciar o container do banco de dados;
+7. Use o comando `npm run start` para iniciar a aplicação.
+8. Acesse o Swagger em http://localhost:3001/swagger/
 
 <details>
 
@@ -39,8 +39,8 @@ Microsserviço de Catálogo de Produtos e Categorias do Sistema de Gestão de Re
 1. Clone este repositório;
 2. Navegue até a pasta raiz do projeto usando o Terminal;
 3. Faça uma cópia do arquivo `.env.template` com o nome `.env` e preencha as variáveis de ambiente dentro dele;
-4. Execute o comando `docker-compose up -d`
-5. Acesse o Swagger em http://localhost:3000/swagger/
+4. Execute o comando `docker-compose up -d --build --force-recreate`
+5. Acesse o Swagger em http://localhost:3001/swagger/
 
 </details>
 
@@ -54,14 +54,14 @@ Microsserviço de Catálogo de Produtos e Categorias do Sistema de Gestão de Re
 2. Navegue até a pasta raiz do projeto usando o Terminal;
 3. Use o comando `docker build -t rms-api-catalogo:latest .` para gerar a imagem de container da aplicação;
 4. Use o comando `kubectl apply -f k8s/development/postgres/namespace.yaml -f k8s/development/postgres/pvc-pv.yaml -f k8s/development/postgres/config.yaml -f k8s/development/postgres/secrets.yaml -f k8s/development/postgres/deployment.yaml -f k8s/development/postgres/service.yaml` para fazer deploy do banco de dados;
-5. Use o comando `kubectl apply -f k8s/development/bff/namespace.yaml -f k8s/development/bff/config.yaml -f k8s/development/bff/secrets.yaml -f k8s/development/bff/deployment.yaml -f k8s/development/bff/service.yaml -f k8s/development/bff/hpa.yaml` para fazer deploy da aplicação;
-6. Acesse o Swagger em http://localhost:3000/swagger/
+5. Use o comando `kubectl apply -f k8s/development/api/namespace.yaml -f k8s/development/api/config.yaml -f k8s/development/api/secrets.yaml -f k8s/development/api/deployment.yaml -f k8s/development/api/service.yaml -f k8s/development/api/hpa.yaml` para fazer deploy da aplicação;
+6. Acesse o Swagger em http://localhost:3001/swagger/
 
 > Para remover a aplicação do Kubernetes, use o comando `kubectl delete namespace rms`
 
 #### Sobre os Secrets do Kubernetes
 
-Em seu ambiente de desenvolvimento, por questão de segurança, abra os arquivos `/k8s/development/postgres/secrets.yaml` e `/k8s/development/bff/secrets.yaml` na pasta `/k8s/development` e preencha os valores sensíveis manualmente.
+Em seu ambiente de desenvolvimento, por questão de segurança, abra os arquivos `/k8s/development/postgres/secrets.yaml` e `/k8s/development/api/secrets.yaml` na pasta `/k8s/development` e preencha os valores sensíveis manualmente.
 
 > No ambiente de produção os Secrets do Kubernetes são gerenciados pelo AWS Secrets Manager.
 

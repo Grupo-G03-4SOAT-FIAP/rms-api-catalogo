@@ -1,4 +1,4 @@
-<img src="https://github.com/Grupo-G03-4SOAT-FIAP/rms-backend/raw/main/docs/img/bope-faca-na-carveira-knife-skull-logo.png" alt="BOPE" title="BOPE" align="right" height="60" />
+<img src="https://github.com/Grupo-G03-4SOAT-FIAP/rms-api-catalogo/raw/main/docs/img/bope-faca-na-carveira-knife-skull-logo.png" alt="BOPE" title="BOPE" align="right" height="60" />
 
 # Restaurant Management System
 ## API Catálogo
@@ -89,7 +89,7 @@ Você pode conectar-se a instância de banco de dados PostgreSQL usando o [pgAdm
 
 ## Documentação
 
-A documentação do projeto está disponível no [GitHub Wiki](https://github.com/Grupo-G03-4SOAT-FIAP/rms-backend/wiki).
+A documentação do projeto está disponível no [GitHub Wiki](https://github.com/Grupo-G03-4SOAT-FIAP/rms-api-catalogo/wiki).
 
 ## Arquitetura
 
@@ -158,7 +158,8 @@ https://github.com/Grupo-G03-4SOAT-FIAP/rms-iac
 ## OWASP ZAP
 
 #### Reports OWASP ZAP API Scan
-Os reports de "antes" e "depois" encontram-se na pasta `/docs/zap-scanning-report`
+Os reports de "antes" e "depois" encontram-se na pasta `/docs/zap-scanning-report`\
+[Clique aqui para acessar](https://github.com/Grupo-G03-4SOAT-FIAP/rms-api-catalogo/tree/feature/147/docs/docs/zap-scanning-report)↗️
 
 <details>
 

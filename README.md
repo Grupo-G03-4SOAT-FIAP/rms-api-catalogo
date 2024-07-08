@@ -158,7 +158,8 @@ https://github.com/Grupo-G03-4SOAT-FIAP/rms-iac
 ## OWASP ZAP
 
 #### Reports OWASP ZAP API Scan
-Os reports de "antes" e "depois" encontram-se na pasta `/docs/zap-scanning-report`
+Os reports de "antes" e "depois" encontram-se na pasta `/docs/zap-scanning-report`\
+[Clique aqui para acessar](https://github.com/Grupo-G03-4SOAT-FIAP/rms-api-catalogo/tree/feature/147/docs/docs/zap-scanning-report)↗️
 
 <details>
 
